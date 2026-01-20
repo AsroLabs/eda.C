@@ -1,0 +1,20 @@
+# eda.C - C DSA Library Implementation
+
+Welcome to this DSA Library written in C for learning purposes and because we're masochists
+
+## Set-up
+
+```sh
+$ git clone https://github.com/AsroLabs/eda.C.git
+
+$ cd eda.C
+
+$ make
+
+$ ./main
+```
+
+## Branches
+
+- Ody --> [omartrese](github.com/omartrese)
+- Space --> [Space-Scofield](https://github.com/Space-Scofield)
