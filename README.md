@@ -16,5 +16,5 @@ $ ./main
 
 ## Branches
 
-- Ody --> [omartrese](github.com/omartrese)
+- Ody --> [omartrese](https://github.com/omartrese)
 - Space --> [Space-Scofield](https://github.com/Space-Scofield)
