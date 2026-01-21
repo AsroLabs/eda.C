@@ -15,7 +15,7 @@ $ ./main
 ```
 ## Upcoming Algorithms
 
-- [ ] Insertion Sort
+- [x] Insertion Sort
 - [ ] Merge Sort
 - [ ] Quick Sort
 
