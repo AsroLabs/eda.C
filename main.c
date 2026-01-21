@@ -6,7 +6,7 @@ int main() {
   InsertionSort(arrayTest, length);
 
   for (int i = 0; i < length; i++) {
-	printf("%.0f\n", arrayTest[i]);
+    printf("%.0f\n", arrayTest[i]);
   }
 
   return 0;
