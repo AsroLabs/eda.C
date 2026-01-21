@@ -103,3 +103,18 @@ void InsertionSort(float array[], size_t length)
     \-----/    \-----/    \-----/    \-----/    \-----/
                 j = 1
 */
+
+
+void MergeSort(float array[], int begin, int end, size_t length)
+{
+    if(length == 0) 
+        return;
+
+    int middle = length / 2;
+
+    MergeSort(array, begin, middle, middle);
+    MergeSort(array, middle + 1, end, middle);
+
+    
+
+}
