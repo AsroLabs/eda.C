@@ -1,11 +1,10 @@
 #include "lib.h"
-#include <stddef.h>
 
 void printArray(float array[], size_t length)
 {
     for (int i = 0; i < length; i++)
     {
-        printf("%.1f ", array[i]);
+        printf("%.0f ", array[i]);
     }
     printf("\n");
 }
@@ -103,3 +102,21 @@ void InsertionSort(float array[], size_t length)
     \-----/    \-----/    \-----/    \-----/    \-----/
                 j = 1
 */
+
+
+float *merge(float array[], int begin, int end, size_t length)
+{
+    if(length == 0) 
+        return array;
+
+    
+}
+
+void MergeSort(float array[], size_t length)
+{
+    int middle = length / 2;
+
+    float *begin = merge(array, 0, middle - 1, middle);
+    float *end =  merge(array, middle, length - 1, middle);
+
+}
