@@ -1,13 +1,8 @@
-#include <stdio.h>
-
-float suma(float a, float b)
-{
-	return a + b;
-}
+#include "lib.h"
 
 int main()
 {
-
-	printf("Prueba de 4 + 5: %f\n", suma(4, 5));
+	float arrayTest[] = {1, 2, 3, 4, 5};
+	InsertionSort(arrayTest, sizeof(arrayTest) / sizeof(arrayTest[0]));	
 	return 0;
 }
