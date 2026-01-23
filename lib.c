@@ -1,38 +1,34 @@
 #include "lib.h"
 
-void printArray(float array[], size_t length)
-{
-    for (int i = 0; i < length; i++)
-    {
-        printf("%.0f ", array[i]);
-    }
-    printf("\n");
+void printArray(float array[], size_t length) {
+  for (int i = 0; i < length; i++) {
+    printf("%.0f ", array[i]);
+  }
+  printf("\n");
 }
 
-void swapNums(float *a, float *b)
-{
-    float temp = *a;
-    *a = *b;
-    *b = temp;
+void swapNums(float *a, float *b) {
+  float temp = *a;
+  *a = *b;
+  *b = temp;
 }
-
 
 // We use a double for loop for doing these two things:
-//  1. (marking the first element as sorted) we iterate over each element of the array
-//  2. Each iterated element is moved to the left until there's no bigger element before its position
+//  1. (marking the first element as sorted) we iterate over each element of the
+//  array
+//  2. Each iterated element is moved to the left until there's no bigger
+//  element before its position
 
-void InsertionSort(float array[], size_t length)
-{
-    for (size_t i = 1; i < length; i++) {
-        for (int j = i; j > 0; j--) {
-            if(array[j] < array[(j - 1)]) //
-                swapNums(&array[j], &array[j - 1]);
-            else
-                break;
-        }
-        printArray(array, length);
-
+void InsertionSort(float array[], size_t length) {
+  for (size_t i = 1; i < length; i++) {
+    for (int j = i; j > 0; j--) {
+      if (array[j] < array[(j - 1)]) //
+        swapNums(&array[j], &array[j - 1]);
+      else
+        break;
     }
+    printArray(array, length);
+  }
 }
 
 /*
@@ -46,14 +42,14 @@ void InsertionSort(float array[], size_t length)
     |     |    |     |    |     |    |     |    |     |
     \-----/    \-----/    \-----/    \-----/    \-----/
                 j = 1
-                
+
     we iterate from the start point to 0 [for (int j = i; j > 0; j--))]
-    if the 'j' position item is smaller than its left, then swap their values 
+    if the 'j' position item is smaller than its left, then swap their values
 */
 
 /*
         SWAP THEM [swap(array[j], array[j - 1])]
-       ____________                  
+       ____________
        |          |
        |          |
        V          V
@@ -78,7 +74,7 @@ void InsertionSort(float array[], size_t length)
 */
 /*
                    SWAP THEM [swap(array[j], array[j - 1])]
-                  ____________                  
+                  ____________
                   |          |
                   |          |
                   V          V
@@ -87,11 +83,11 @@ void InsertionSort(float array[], size_t length)
     |  3  |    |  2  |    |  5  |    |  1  |    |  4  |
     |     |    |     |    |     |    |     |    |     |
     \-----/    \-----/    \-----/    \-----/    \-----/
-                           j = 2               
+                           j = 2
 */
 /*
         SWAP THEM [swap(array[j], array[j - 1])]
-       ____________                  
+       ____________
        |          |
        |          |
        V          V
@@ -103,63 +99,70 @@ void InsertionSort(float array[], size_t length)
                 j = 1
 */
 
+void merge(float array[], int left, int middle, int right) {
+  // for example: array of 5 elements (from pos 0 to 4)
+  // middle element: 2
 
-void merge(float array[], int left, int middle, int right){
-    int n1 = middle - left + 1;
-    int n2 = right - middle;
+  int leftSize = middle - left + 1; // 2 - 0 + 1 = 3 elements
+  int rightSize = right - middle;   // 4 - 2 = 2 elements
 
-    float L[n1], R[n2];
+  float Left[leftSize], Right[rightSize];
 
-    for (int i = 0; i < n1; i++)
-        L[i] = array[left + i];
+  for (int i = 0; i < leftSize; i++)
+    Left[i] = array[left + i]; // creates the left array from the initial one
 
-    
-    for (int j = 0; j < n2; j++)
-        R[j] = array[middle + 1 + j];
+  printf("Left: ");
+  printArray(Left, leftSize);
 
-    printArray(L, n1);
-    printArray(R, n2);
+  for (int j = 0; j < rightSize; j++)
+    Right[j] =
+        array[(middle + 1) + j]; // creates the right array from the initial one
 
-    int i = 0, j = 0, k = left; 
-    
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            array[k] = L[i];
-            i++;
-        } else {
-            array[k] = R[j];
-            j++;
-        }
-        k++;
+  printf("Right: ");
+  printArray(Right, rightSize);
+
+  int i = 0 /* left iterator */, 
+  	j = 0 /* right iterator */,
+    k = left /* final array length (from left (0)) */; // iterators for the final
+                                                   // array
+
+  while (i < leftSize && j < rightSize) {
+    if (Left[i] <= Right[j]) {
+      array[k] = Left[i];
+      i++;
+    } else {
+      array[k] = Right[j];
+      j++;
     }
+    k++;
+  }
 
-    while (i < n1) {
-        array[k] = L[i];
-        i++;
-        k++;
-    }
- 
-    while (j < n2) {
-        array[k] = R[j];
-        j++;
-        k++;
-    }
+  while (i < leftSize) {
+    array[k] = Left[i];
+    i++;
+    k++;
+  }
+
+  while (j < rightSize) {
+    array[k] = Right[j];
+    j++;
+    k++;
+  }
+
+  printArray(array, k);
 }
 
-void MergeSort(float array[], int begin, int end)
-{
-  if(begin < end)
-  {
+void MergeSort(float array[], int begin, int end) {
+  if (begin < end) {
     int mid = begin + (end - begin) / 2;
 
     // printArray(array, end);
     MergeSort(array, begin, mid);
-    
+
     // printArray(array, end);
     MergeSort(array, mid + 1, end);
-    
+
     merge(array, begin, mid, end);
     // printArray(array, end);
-
   }
 }
