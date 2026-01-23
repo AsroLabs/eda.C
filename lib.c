@@ -100,8 +100,11 @@ void InsertionSort(float array[], size_t length) {
 */
 
 void merge(float array[], int left, int middle, int right) {
-  int leftSize = middle - left + 1;
-  int rightSize = right - middle;
+  // for example: array of 5 elements (from pos 0 to 4)
+  // middle element: 2 
+
+  int leftSize = middle - left + 1; // 2 - 0 + 1 = 3 elements
+  int rightSize = right - middle; // 4 - 2 = 2 elements
 
   float L[leftSize], R[rightSize];
 
