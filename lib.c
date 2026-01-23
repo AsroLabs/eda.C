@@ -108,7 +108,7 @@ void merge(float array[], int left, int middle, int right){
     int n1 = middle - left + 1;
     int n2 = right - middle;
 
-    int L[n1], R[n2];
+    float L[n1], R[n2];
 
     for (int i = 0; i < n1; i++)
         L[i] = array[left + i];
@@ -116,6 +116,9 @@ void merge(float array[], int left, int middle, int right){
     
     for (int j = 0; j < n2; j++)
         R[j] = array[middle + 1 + j];
+
+    printArray(L, n1);
+    printArray(R, n2);
 
     int i = 0, j = 0, k = left; 
     

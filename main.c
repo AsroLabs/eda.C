@@ -7,9 +7,9 @@ int main() {
   // InsertionSort(arrayTest, length);
   MergeSort(arrayTest, 0, length - 1);
 
-  for (int i = 0; i < length; i++) {
-    printf("%.0f\n", arrayTest[i]);
-  }
+  printf("\nArray ordenado: \n");
+  printArray(arrayTest, length);
+  printf("\n");
 
   return 0;
 }
