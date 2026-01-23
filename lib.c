@@ -27,7 +27,6 @@ void InsertionSort(float array[], size_t length) {
       else
         break;
     }
-    printArray(array, length);
   }
 }
 
@@ -111,15 +110,11 @@ void merge(float array[], int left, int middle, int right) {
   for (int i = 0; i < leftSize; i++)
     Left[i] = array[left + i]; // creates the left array from the initial one
 
-  printf("Left: ");
-  printArray(Left, leftSize);
 
   for (int j = 0; j < rightSize; j++)
     Right[j] =
         array[(middle + 1) + j]; // creates the right array from the initial one
 
-  printf("Right: ");
-  printArray(Right, rightSize);
 
   int i = 0 /* left iterator */, 
   	j = 0 /* right iterator */,
@@ -149,20 +144,17 @@ void merge(float array[], int left, int middle, int right) {
     k++;
   }
 
-  printArray(array, k);
+  //results on the final array of size k
 }
 
 void MergeSort(float array[], int begin, int end) {
   if (begin < end) {
     int mid = begin + (end - begin) / 2;
 
-    // printArray(array, end);
     MergeSort(array, begin, mid);
 
-    // printArray(array, end);
     MergeSort(array, mid + 1, end);
 
     merge(array, begin, mid, end);
-    // printArray(array, end);
   }
 }
