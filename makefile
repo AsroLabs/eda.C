@@ -1,2 +1,2 @@
 main: main.c lib.c
-	gcc lib.c main.c -o main
+	gcc -g -O0 -fno-omit-frame-pointer lib.c main.c -o main

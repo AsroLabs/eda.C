@@ -5,7 +5,7 @@ int main() {
   int length = sizeof(arrayTest) / sizeof(arrayTest[0]);
 
   // InsertionSort(arrayTest, length);
-  MergeSort(arrayTest, 0, length, length);
+  MergeSort(arrayTest, 0, length - 1);
 
   for (int i = 0; i < length; i++) {
     printf("%.0f\n", arrayTest[i]);

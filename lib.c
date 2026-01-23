@@ -104,19 +104,59 @@ void InsertionSort(float array[], size_t length)
 */
 
 
-float *merge(float array[], int begin, int end, size_t length)
-{
-    if(length == 0) 
-        return array;
+void merge(float array[], int left, int middle, int right){
+    int n1 = middle - left + 1;
+    int n2 = right - middle;
+
+    int L[n1], R[n2];
+
+    for (int i = 0; i < n1; i++)
+        L[i] = array[left + i];
 
     
+    for (int j = 0; j < n2; j++)
+        R[j] = array[middle + 1 + j];
+
+    int i = 0, j = 0, k = left; 
+    
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            array[k] = L[i];
+            i++;
+        } else {
+            array[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        array[k] = L[i];
+        i++;
+        k++;
+    }
+ 
+    while (j < n2) {
+        array[k] = R[j];
+        j++;
+        k++;
+    }
 }
 
-void MergeSort(float array[], size_t length)
+void MergeSort(float array[], int begin, int end)
 {
-    int middle = length / 2;
+  if(begin < end)
+  {
+    int mid = begin + (end - begin) / 2;
 
-    float *begin = merge(array, 0, middle - 1, middle);
-    float *end =  merge(array, middle, length - 1, middle);
+    // printArray(array, end);
+    MergeSort(array, begin, mid);
+    
+    // printArray(array, end);
+    MergeSort(array, mid + 1, end);
+    
+    merge(array, begin, mid, end);
+    // printArray(array, end);
 
+  }
 }
