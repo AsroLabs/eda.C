@@ -101,46 +101,50 @@ void InsertionSort(float array[], size_t length) {
 
 void merge(float array[], int left, int middle, int right) {
   // for example: array of 5 elements (from pos 0 to 4)
-  // middle element: 2 
+  // middle element: 2
 
   int leftSize = middle - left + 1; // 2 - 0 + 1 = 3 elements
-  int rightSize = right - middle; // 4 - 2 = 2 elements
+  int rightSize = right - middle;   // 4 - 2 = 2 elements
 
-  float L[leftSize], R[rightSize];
+  float Left[leftSize], Right[rightSize];
 
   for (int i = 0; i < leftSize; i++)
-    L[i] = array[left + i];
+    Left[i] = array[left + i]; // creates the left array from the initial one
 
   printf("Left: ");
-  printArray(L, leftSize);
+  printArray(Left, leftSize);
 
   for (int j = 0; j < rightSize; j++)
-    R[j] = array[middle + 1 + j];
+    Right[j] =
+        array[(middle + 1) + j]; // creates the right array from the initial one
 
   printf("Right: ");
-  printArray(R, rightSize);
+  printArray(Right, rightSize);
 
-  int i = 0, j = 0, k = left;
+  int i = 0 /* left iterator */, 
+  	j = 0 /* right iterator */,
+    k = left /* final array length (from left (0)) */; // iterators for the final
+                                                   // array
 
   while (i < leftSize && j < rightSize) {
-    if (L[i] <= R[j]) {
-      array[k] = L[i];
+    if (Left[i] <= Right[j]) {
+      array[k] = Left[i];
       i++;
     } else {
-      array[k] = R[j];
+      array[k] = Right[j];
       j++;
     }
     k++;
   }
 
   while (i < leftSize) {
-    array[k] = L[i];
+    array[k] = Left[i];
     i++;
     k++;
   }
 
   while (j < rightSize) {
-    array[k] = R[j];
+    array[k] = Right[j];
     j++;
     k++;
   }
