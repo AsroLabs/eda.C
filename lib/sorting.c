@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "sorting.h"
 
 void printArray(float array[], size_t length) {
   for (int i = 0; i < length; i++) {

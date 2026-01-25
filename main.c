@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "lib/sorting.h"
 
 int main() {
   float arrayTest[] = {49, 9, 7, 31, 36, 38, 35, 36, 15, 44};

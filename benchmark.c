@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "lib/sorting.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
