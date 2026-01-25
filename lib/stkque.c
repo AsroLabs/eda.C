@@ -1,0 +1,19 @@
+#include "stkque.h"
+#include <stdlib.h>
+
+Stack NewStack()
+{
+    Stack newStack; 
+    newStack.values = malloc(sizeof(float));
+    newStack.size = 0;
+    return newStack; 
+}
+
+
+void Push(Stack *stack, float value)
+{
+    stack->values[stack->size] = value;
+    stack->peek = value;
+    stack->size++;
+    stack->values = realloc(stack->values, sizeof(float) * stack->size);
+}
