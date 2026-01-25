@@ -19,8 +19,8 @@ int main() {
 
   start_t = clock();
 
-  //InsertionSort(array, ARR_SIZE);
-  MergeSort(array, 0, ARR_SIZE - 1);
+  InsertionSort(array, ARR_SIZE);
+  // MergeSort(array, 0, ARR_SIZE - 1);
 
   end_t = clock();
 
