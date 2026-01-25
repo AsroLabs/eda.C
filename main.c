@@ -26,5 +26,17 @@ int main() {
   {
     printf("%f ", miStack.values[i]);
   }
+  printf("\n");
+
+  Pop(&miStack);
+  Pop(&miStack);
+  printf("size: %lu\n", miStack.size);
+
+  for(int i = 0; i < miStack.size; i++)
+  {
+    printf("%f ", miStack.values[i]);
+  }
+  printf("\n");
+  
   return 0;
 }

@@ -1,5 +1,4 @@
 #include "stkque.h"
-#include <stdlib.h>
 
 Stack NewStack()
 {
@@ -15,5 +14,11 @@ void Push(Stack *stack, float value)
     stack->values[stack->size] = value;
     stack->peek = value;
     stack->size++;
+    stack->values = realloc(stack->values, sizeof(float) * stack->size);
+}
+
+void Pop(Stack *stack)
+{
+    stack->size--;
     stack->values = realloc(stack->values, sizeof(float) * stack->size);
 }
