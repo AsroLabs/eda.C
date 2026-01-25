@@ -14,13 +14,9 @@ int main() {
 
   Stack miStack = NewStack();
   
-  Push(&miStack, 1);
-  Push(&miStack, 1);
-  Push(&miStack, 1);
-  Push(&miStack, 1);
-  Push(&miStack, 1);
-  Push(&miStack, 1);
-  Push(&miStack, 1);
+  for(int i = 1; i <= 10; i++)
+    Push(&miStack, i);
+  
   printf("size: %lu\n", miStack.size);
   printf("peek: %f\n", miStack.peek);
   
