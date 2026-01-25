@@ -3,3 +3,6 @@ main: main.c
 
 benchmark: benchmark.c
 	gcc ./lib/*.c benchmark.c -o benchmark
+
+rm: main
+	rm -rf main
