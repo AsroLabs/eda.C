@@ -1,5 +1,5 @@
-main: main.c lib.c
-	gcc -g -O0 -fno-omit-frame-pointer lib.c main.c -o main
+main: main.c
+	gcc -g -O0 -fno-omit-frame-pointer main.c ./lib/*.c -o main
 
-benchmark: benchmark.c lib.c
-	gcc lib.c benchmark.c -o benchmark
+benchmark: benchmark.c
+	gcc ./lib/*.c benchmark.c -o benchmark
