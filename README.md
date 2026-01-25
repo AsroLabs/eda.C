@@ -19,6 +19,14 @@ $ ./main
 - [x] Merge Sort
 - [ ] Quick Sort
 
+## Upcoming Data Structures
+
+- [ ] Stack & Queue
+- [ ] Linked & Doubly Linked List
+- [ ] Hash table
+- [ ] Graph
+- [ ] Tree
+
 ## Branches
 
 - Ody --> [omartrese](https://github.com/omartrese)
