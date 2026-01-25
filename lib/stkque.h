@@ -1,5 +1,5 @@
-#ifndef SORTING_H
-#define SORTING_H
+#ifndef STKQUE_H
+#define STKQUE_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

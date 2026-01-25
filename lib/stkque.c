@@ -8,7 +8,6 @@ Stack NewStack()
     return newStack; 
 }
 
-
 void Push(Stack *stack, float value)
 {
     stack->values[stack->size] = value;
@@ -21,4 +20,5 @@ void Pop(Stack *stack)
 {
     stack->size--;
     stack->values = realloc(stack->values, sizeof(float) * stack->size);
+    stack->peek = stack->values[stack->size];
 }
