@@ -23,7 +23,7 @@ $ ./main
 
 - [ ] Stack & Queue
 - [ ] Linked & Doubly Linked List
-- [ ] Hash table
+- [ ] Hash Table
 - [ ] Graph
 - [ ] Tree
 
