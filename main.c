@@ -1,8 +1,16 @@
 #include "lib.h"
 
-int main()
-{
-	float arrayTest[] = {1, 2, 3, 4, 5};
-	InsertionSort(arrayTest, sizeof(arrayTest) / sizeof(arrayTest[0]));	
-	return 0;
+int main() {
+    float myArray[] = {64, 34, 25, 12, 22, 11, 90, 5};
+    int n = sizeof(myArray) / sizeof(myArray[0]);
+
+    Quicksort(myArray, 0, n - 1);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%.f ", myArray[i]);
+    }
+    return 0;
 }
+
+
