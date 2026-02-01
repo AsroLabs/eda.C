@@ -6,5 +6,6 @@ void printArray(float array[], size_t length);
 
 void InsertionSort(float array[], size_t length);
 void MergeSort(float array[], int begin, int end);
+void Quicksort(float array[], int low, int high);
 
 #endif

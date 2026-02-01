@@ -1,24 +1,16 @@
-#include "./lib/arrays.h"
-#include "./lib/stkque.h"
+#include "lib/arrays.h"
 
 int main() {
+    float myArray[] = {64, 34, 25, 12, 22, 11, 90, 5};
+    int n = sizeof(myArray) / sizeof(myArray[0]);
 
-  Stack miStack = NewStack();
-  
-  for(int i = 1; i <= 10; i++) //añadir 10 elementos
-    Push(&miStack, i);
+    Quicksort(myArray, 0, n - 1);
 
-  printf("size: %lu\n", miStack.size);
-  printf("peek: %f\n", miStack.peek);
-  
-  printArray(miStack.values, miStack.size);
-  
-  for(int i = 1; i <= 6; i++) //eliminar 6 elementos
-    Pop(&miStack);
-  printf("size: %lu\n", miStack.size);
-  printf("peek: %f\n", miStack.peek);
-
-  printArray(miStack.values, miStack.size);
-
-  return 0;
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%.f ", myArray[i]);
+    }
+    return 0;
 }
+
+

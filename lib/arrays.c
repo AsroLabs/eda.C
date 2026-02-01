@@ -158,3 +158,45 @@ void MergeSort(float array[], int begin, int end) {
     merge(array, begin, mid, end);
   }
 }
+
+
+
+
+// A ver, como es esta shit?
+
+int partition(float array[], int low, int high){
+  float pivot = array[low];
+  int start = low;
+  int end = high;
+
+  while(start < end){
+
+    while(array[start] <= pivot)
+      start++;
+
+    while(array[end] > pivot)
+      end--;
+
+    if(start < end){
+      swapNums(&array[start], &array[end]);
+    }
+
+  }
+  swapNums(&array[low], &array[end]);
+  return end;
+
+}
+
+void Quicksort(float array[], int low, int high){
+
+  if (low < high){
+
+    int pivotIndex = partition(array, low, high);
+
+    Quicksort(array, low, pivotIndex - 1);
+
+    Quicksort(array, pivotIndex + 1, high);
+
+  }
+
+}
