@@ -1,5 +1,4 @@
 #include "arrays.h"
-#include <stdio.h>
 
 void printArray(float array[], size_t length) {
   for (int i = 0; i < length; i++) {

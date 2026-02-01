@@ -1,1 +1,5 @@
 main
+.vscode
+test
+test.c
+benchmark

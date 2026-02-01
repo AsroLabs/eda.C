@@ -13,6 +13,19 @@ $ make
 
 $ ./main
 ```
+## Upcoming Algorithms
+
+- [x] Insertion Sort
+- [x] Merge Sort
+- [ ] Quick Sort
+
+## Upcoming Data Structures
+
+- [ ] Stack & Queue
+- [ ] Linked & Doubly Linked List
+- [ ] Hash Table
+- [ ] Graph
+- [ ] Tree
 
 ## Branches
 
