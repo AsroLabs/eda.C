@@ -8,4 +8,6 @@ typedef struct {
     char ***elements;
 } HashSet;
 
+HashSet newHashSet();
+
 #endif
