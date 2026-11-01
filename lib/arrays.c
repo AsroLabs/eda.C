@@ -201,7 +201,7 @@ void Quicksort(float array[], int low, int high){
 
 }
 
-void Reversalarray(float *array, int begin, int end){
+void Reversalarray(float array[], int begin, int end){
   for(begin = 0; begin < end; begin++, end--){
     swapNums(&array[begin], &array[end]);
   }
