@@ -19,7 +19,7 @@ int main() {
 
   start_t = clock();
 
-  InsertionSort(array, ARR_SIZE);
+  Reversalarray(array, 0, ARR_SIZE - 1);
   // MergeSort(array, 0, ARR_SIZE - 1);
 
   end_t = clock();
