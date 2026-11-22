@@ -26,4 +26,15 @@ float Peek(Stack *stack) {
   return stack->values[stack->size - 1];
 }
 
+bool exists(Stack stack, float value) {
+  bool result = false;
+  for(int i = 0; i < stack.size; i++) {
+    if(stack.values[i] == value)
+      result = true;
+  }
+
+  return result;
+
+}
+
 bool isEmpty(Stack stack) { return stack.size <= 0; }

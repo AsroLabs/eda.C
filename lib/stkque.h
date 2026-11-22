@@ -14,6 +14,7 @@ Stack NewStack();
 void Push(Stack *stack, float value);
 void Pop(Stack *stack);
 float Peek(Stack *stack);
+bool exists(Stack stack, float value);
 bool isEmpty(Stack stack);
 
 
