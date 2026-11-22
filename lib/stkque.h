@@ -7,7 +7,6 @@
 // Stack
 typedef struct {
     float *values;
-    float peek;
     size_t size;
 } Stack;
 
@@ -15,6 +14,8 @@ typedef struct {
 Stack NewStack();
 void Push(Stack *stack, float value);
 void Pop(Stack *stack);
+float Peek(Stack *stack);
+bool exists(Stack stack, float value);
 bool isStackEmpty(Stack stack);
 
 // Queue 
