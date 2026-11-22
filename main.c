@@ -1,15 +1,16 @@
 #include "lib/arrays.h"
+#include "lib/stkque.h"
+
 
 int main() {
-    float myArray[] = {64, 34, 25, 12, 22, 11, 90, 5};
-    int n = sizeof(myArray) / sizeof(myArray[0]);
+    Queue queue = NewQueue();
 
-    Reversalarray(myArray, 0, n - 1);
+    enqueue(&queue, 2);
+    enqueue(&queue, 5);
+    enqueue(&queue, 6);
+    dequeue(&queue);
+    front(&queue);
 
-    printf("Reversed array: ");
-    for (int i = 0; i < n; i++) {
-        printf("%.f ", myArray[i]);
-    }
     return 0;
 }
 
