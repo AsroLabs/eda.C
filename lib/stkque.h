@@ -21,7 +21,6 @@ bool isStackEmpty(Stack stack);
 // Queue 
 typedef struct{
     float *values;
-    float front;
     size_t size;
 } Queue;
 
@@ -29,6 +28,6 @@ typedef struct{
 Queue NewQueue();
 void enqueue(Queue *queue, float value);
 void dequeue(Queue *queue);
-void front(Queue *queue);
+float Front(Queue *queue);
 bool isQueueEmpty(Queue queue);
 #endif

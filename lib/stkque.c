@@ -1,5 +1,4 @@
 #include "stkque.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 // Stack
@@ -49,7 +48,6 @@ Queue NewQueue() {
   Queue newQueue;
   newQueue.values = NULL;
   newQueue.size = 0;
-  newQueue.front = 0;
   return newQueue;
 }
 
@@ -57,7 +55,6 @@ void enqueue(Queue *queue, float value) {
   queue->size++;
   queue->values = realloc(queue->values, sizeof(float) * queue->size);
   queue->values[queue->size - 1] = value;
-  queue->front = value;
 }
 
 void dequeue(Queue *queue) {
@@ -66,16 +63,13 @@ void dequeue(Queue *queue) {
 
   queue->size--;
   queue->values = realloc(queue->values,  sizeof(float) * queue->size);
-  
-  if (queue->size > 0)
-    queue->front = queue->values[queue->size - 1];
 }
 
-void front(Queue *queue) {
+float Front(Queue *queue) {
   if (queue->size == 0)
-    return;
+    return -1;
 
-  printf("%f", queue->values[0]);
+  return queue->values[0];
 }
 
 bool isQueueEmpty(Queue queue) { return queue.size <= 0; }
