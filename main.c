@@ -1,14 +1,15 @@
-#include "lib/arrays.h"
+//#include "lib/arrays.h"
+#include "lib/stkque.h"
 
 int main() {
-    float myArray[] = {64, 34, 25, 12, 22, 11, 90, 5};
-    int n = sizeof(myArray) / sizeof(myArray[0]);
+    Stack mistack = NewStack();
 
-    Reversalarray(myArray, 0, n - 1);
+    for(int i = 5; i >= 1; i--)
+        Push(&mistack, i);
 
-    printf("Reversed array: ");
-    for (int i = 0; i < n; i++) {
-        printf("%.f ", myArray[i]);
+    for(int i = 0; i < 5; i++) {
+        printf("%f ", Peek(&mistack));
+        Pop(&mistack);
     }
     return 0;
 }
