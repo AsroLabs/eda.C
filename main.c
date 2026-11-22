@@ -10,6 +10,7 @@ int main() {
     float current = Front(&queue);
     printf("Front Queue: %f\n", current);
     dequeue(&queue);
+    dequeue(&queue);
     current = Front(&queue);
     printf("Front Queue after dequeue: %f\n", current);
 

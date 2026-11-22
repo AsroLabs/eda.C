@@ -62,7 +62,15 @@ void dequeue(Queue *queue) {
     return;
 
   queue->size--;
-  queue->values = realloc(queue->values,  sizeof(float) * queue->size);
+
+  if (queue->size > 0) {
+    memmove(queue->values, queue->values + 1, sizeof(float) * queue->size);
+  }
+
+  float *resized = realloc(queue->values, sizeof(float) * queue->size);
+  if (resized != NULL || queue->size == 0) {
+    queue->values = resized;
+  }
 }
 
 float Front(Queue *queue) {
