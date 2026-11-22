@@ -21,7 +21,7 @@ $ ./main
 
 ## Upcoming Data Structures
 
-- [ ] Stack & Queue
+- [x] Stack & Queue
 - [ ] Linked & Doubly Linked List
 - [ ] Hash Table
 - [ ] Graph
