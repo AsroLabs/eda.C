@@ -1,24 +1,15 @@
-//#include "lib/arrays.h"
+#include "lib/arrays.h"
 #include "lib/stkque.h"
 
+
 int main() {
-    Stack mistack = NewStack();
+    Queue queue = NewQueue();
 
-    for(int i = 5; i >= 1; i--)
-        Push(&mistack, i);
-
-
-    printf("Está el stack vacío?: %d\n", isEmpty(mistack));
-    printf("el número 6 existe?: %d\n", exists(mistack, 6));
-    printf("el número 2 existe?: %d\n", exists(mistack, 2));
-
-    for(int i = 0; i < 5; i++) {
-        printf("%f ", Peek(&mistack));
-        Pop(&mistack);
-    }
-
-    printf("\n");
-    printf("Está el stack vacío?: %d\n", isEmpty(mistack));
+    enqueue(&queue, 2);
+    enqueue(&queue, 5);
+    enqueue(&queue, 6);
+    dequeue(&queue);
+    front(&queue);
 
     return 0;
 }
